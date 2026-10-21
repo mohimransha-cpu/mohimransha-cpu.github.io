@@ -3,389 +3,652 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mohamed Imran Ifthikar | Operations Supervisor</title>
+
+<title>Mohamad Imran | Operations Supervisor</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
+:root{
+--bg:#0b1120;
+--card:rgba(255,255,255,0.06);
+--border:rgba(255,255,255,0.12);
+--text:#e5e7eb;
+--muted:#94a3b8;
+--primary:#3b82f6;
+--secondary:#06b6d4;
+}
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:#f4f7fb;
-color:#333;
-line-height:1.6;
+font-family:'Poppins',sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.7;
 }
 
-.header{
-background:linear-gradient(135deg,#0a3d62,#1e5aa8);
+body::before{
+content:'';
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at top right,#2563eb22,transparent 30%),
+radial-gradient(circle at bottom left,#06b6d422,transparent 30%);
+z-index:-1;
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 8%;
+background:rgba(11,17,32,.85);
+backdrop-filter:blur(15px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+font-weight:700;
+font-size:22px;
 color:white;
-text-align:center;
-padding:50px 20px;
 }
 
-.profile-img{
-width:200px;
-height:200px;
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav ul a{
+color:white;
+text-decoration:none;
+font-size:14px;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:120px 20px 80px;
+}
+
+.hero-card{
+max-width:900px;
+width:100%;
+text-align:center;
+background:var(--card);
+border:1px solid var(--border);
+backdrop-filter:blur(20px);
+padding:50px;
+border-radius:30px;
+}
+
+.profile{
+width:180px;
+height:180px;
 border-radius:50%;
 object-fit:cover;
 border:5px solid white;
-margin-bottom:20px;
-}
-
-.header h1{
-font-size:42px;
-margin-bottom:10px;
-}
-
-.header h2{
-font-weight:300;
-}
-
-.contact-top{
-margin-top:15px;
-font-size:16px;
-}
-
-.container{
-max-width:1100px;
-margin:30px auto;
-padding:0 20px;
-}
-
-.card{
-background:white;
-padding:25px;
-border-radius:15px;
-margin-bottom:20px;
-box-shadow:0 2px 10px rgba(0,0,0,0.08);
-}
-
-.card h2{
-color:#0a3d62;
-margin-bottom:15px;
-border-bottom:2px solid #eee;
-padding-bottom:8px;
-}
-
-.skills{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:10px;
-}
-
-.skill{
-background:#eef4ff;
-padding:12px;
-border-left:4px solid #0a3d62;
-border-radius:5px;
-}
-
-.timeline{
-border-left:4px solid #0a3d62;
-padding-left:20px;
-}
-
-.job{
+box-shadow:0 0 35px rgba(59,130,246,.7);
 margin-bottom:25px;
 }
 
-.job h3{
-color:#0a3d62;
+.hero h1{
+font-size:60px;
+margin-bottom:10px;
 }
 
-ul{
-padding-left:20px;
+.hero h3{
+font-weight:400;
+color:#cbd5e1;
+margin-bottom:20px;
 }
 
-.cv-btn{
-display:inline-block;
-background:#0a3d62;
-color:white;
-padding:12px 20px;
-text-decoration:none;
-border-radius:8px;
-margin-top:10px;
+.hero p{
+max-width:700px;
+margin:auto;
+color:var(--muted);
 }
 
-.cv-btn:hover{
-background:#082d49;
-}
-
-.footer{
-background:#0a3d62;
-color:white;
-text-align:center;
-padding:20px;
+.buttons{
 margin-top:30px;
 }
+
+.btn{
+display:inline-block;
+padding:14px 30px;
+border-radius:40px;
+text-decoration:none;
+font-weight:600;
+margin:8px;
+}
+
+.primary{
+background:var(--primary);
+color:white;
+}
+
+.secondary{
+background:white;
+color:black;
+}
+
+.section{
+padding:90px 8%;
+}
+
+.section-title{
+text-align:center;
+font-size:40px;
+margin-bottom:50px;
+}
+
+.glass{
+background:var(--card);
+backdrop-filter:blur(15px);
+border:1px solid var(--border);
+border-radius:25px;
+padding:30px;
+}
+
+.about{
+max-width:1100px;
+margin:auto;
+}
+
+.stats{
+margin-top:40px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.stat{
+background:var(--card);
+padding:30px;
+border-radius:20px;
+text-align:center;
+border:1px solid var(--border);
+}
+
+.stat h2{
+font-size:50px;
+color:#60a5fa;
+}
+
+.timeline{
+max-width:900px;
+margin:auto;
+position:relative;
+}
+
+.timeline::before{
+content:'';
+position:absolute;
+left:50%;
+top:0;
+bottom:0;
+width:4px;
+background:#3b82f6;
+transform:translateX(-50%);
+}
+
+.timeline-item{
+width:50%;
+padding:20px 40px;
+position:relative;
+}
+
+.timeline-item.left{
+left:0;
+}
+
+.timeline-item.right{
+left:50%;
+}
+
+.timeline-content{
+background:var(--card);
+border:1px solid var(--border);
+padding:25px;
+border-radius:18px;
+}
+
+.timeline-content h3{
+margin-bottom:8px;
+}
+
+.timeline-content span{
+color:#60a5fa;
+font-size:14px;
+}
+
+.achievements{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.achievement{
+background:var(--card);
+padding:25px;
+border-radius:20px;
+border:1px solid var(--border);
+}
+
+.skills{
+max-width:900px;
+margin:auto;
+}
+
+.skill{
+margin-bottom:25px;
+}
+
+.skill-name{
+display:flex;
+justify-content:space-between;
+margin-bottom:8px;
+}
+
+.bar{
+height:12px;
+background:#1f2937;
+border-radius:20px;
+overflow:hidden;
+}
+
+.fill{
+height:100%;
+background:linear-gradient(90deg,#3b82f6,#06b6d4);
+}
+
+.cert-list li{
+margin-bottom:10px;
+}
+
+.contact{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.contact-card{
+background:var(--card);
+padding:30px;
+border-radius:20px;
+border:1px solid var(--border);
+text-align:center;
+}
+
+footer{
+padding:30px;
+text-align:center;
+background:#020617;
+margin-top:50px;
+}
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+width:65px;
+height:65px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+color:white;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,.4);
+z-index:999;
+}
+
+@media(max-width:900px){
+
+.timeline::before{
+left:20px;
+}
+
+.timeline-item{
+width:100%;
+left:0 !important;
+padding-left:60px;
+padding-right:10px;
+}
+
+.stats{
+grid-template-columns:1fr;
+}
+
+.contact{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:38px;
+}
+
+.hero-card{
+padding:30px;
+}
+
+nav ul{
+display:none;
+}
+
+}
+
 </style>
 </head>
-
 <body>
 
-<div class="header">
+<nav>
+<div class="logo">Mohamad Imran</div>
 
-<img src="A091.png" alt="Mohamed Imran Ifthikar" class="profile-img">
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 
-<h1>Mohamed Imran Ifthikar</h1>
+<section class="hero">
 
-<h2>Operations Supervisor</h2>
+<div class="hero-card">
 
-<div class="contact-top">
-📧 Imranmoh.sha@gmail.com |
-📱 +966 534116552 |
-📍 Al Jubail, Saudi Arabia
-</div>
+<img src="profile.jpg" alt="Mohamad Imran" class="profile">
 
-</div>
+<h1>Mohamad Imran</h1>
 
-<div class="container">
-
-<div class="card">
-<h2>Professional Summary</h2>
+<h3>
+Operations Supervisor | Logistics & Transport Operations Specialist
+</h3>
 
 <p>
-Dynamic Operations Supervisor with proven experience in logistics management,
-transport operations, fleet coordination, inventory control, customer relations,
-resource planning and business support functions. Strong ability to improve
-operational efficiency, coordinate teams and ensure smooth execution of transport
-and equipment-related activities.
+Experienced Operations Supervisor with expertise in logistics,
+transport coordination, customer relations, resource planning,
+inventory management, billing control and operational excellence.
+Supporting industrial and infrastructure projects across
+Saudi Arabia, Kuwait and Sri Lanka.
 </p>
 
-</div>
+<div class="buttons">
 
-<div class="card">
-<h2>Career Objective</h2>
+<a href="Mohamad_Imran_CV.pdf" class="btn primary" target="_blank">
+Download Resume
+</a>
 
-<p>
-To contribute my experience in logistics, transportation,
-operations management and customer service toward a challenging
-role where I can support organizational growth while continuing
-to develop my professional capabilities.
-</p>
-
-</div>
-
-<div class="card">
-
-<h2>Core Skills</h2>
-
-<div class="skills">
-
-<div class="skill">Operations Management</div>
-<div class="skill">Logistics Management</div>
-<div class="skill">Fleet Coordination</div>
-<div class="skill">Transportation Planning</div>
-<div class="skill">Inventory Control</div>
-<div class="skill">Customer Relations</div>
-<div class="skill">Performance Management</div>
-<div class="skill">Resource Planning</div>
-<div class="skill">Strategic Planning</div>
-<div class="skill">Team Building</div>
-<div class="skill">Sales & Business Development</div>
-<div class="skill">Microsoft Office</div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>Professional Experience</h2>
-
-<div class="timeline">
-
-<div class="job">
-<h3>Operations Supervisor</h3>
-<p><strong>Faris Al Arab Transport Co</strong></p>
-<p>May 2023 – Present</p>
-<ul>
-<li>Manage transportation and logistics operations.</li>
-<li>Handle client requirements and operational coordination.</li>
-<li>Monitor equipment utilization and workforce deployment.</li>
-<li>Support sales, invoicing and operational reporting.</li>
-<li>Coordinate project activities and customer requirements.</li>
-</ul>
-</div>
-
-<div class="job">
-<h3>Billing Coordinator</h3>
-<p><strong>Jassim Transport & Stevedoring Co</strong></p>
-<p>Sep 2019 – Feb 2023</p>
-<ul>
-<li>Managed billing and invoicing activities.</li>
-<li>Monitored equipment utilization and rental operations.</li>
-<li>Prepared reports and customer billing records.</li>
-<li>Supported inventory and operational compliance.</li>
-</ul>
-</div>
-
-<div class="job">
-<h3>Administration Executive</h3>
-<p><strong>Associated Motorways (Pvt) Ltd</strong></p>
-<p>May 2015 – Oct 2017</p>
-<ul>
-<li>Coordinated logistics and shipment scheduling.</li>
-<li>Managed vehicle and driver allocation.</li>
-<li>Monitored inventory and delivery schedules.</li>
-</ul>
-</div>
-
-<div class="job">
-<h3>Inventory In Charge</h3>
-<p><strong>Ansar Mall, Sharjah</strong></p>
-<p>Jan 2013 – Feb 2015</p>
-<ul>
-<li>Inventory management and stock control.</li>
-<li>Warehouse coordination and reporting.</li>
-<li>Stock monitoring and reconciliation.</li>
-</ul>
-</div>
-
-</div>
-
-</div>
-
-<div class="card">
-<h2>Professional Highlights</h2>
-
-<ul>
-<li>Experience in Logistics & Transportation Operations</li>
-<li>Fleet Coordination and Resource Planning</li>
-<li>Client Relationship Management</li>
-<li>Operational Reporting & Documentation</li>
-<li>Inventory and Asset Management</li>
-<li>Team Leadership and Coordination</li>
-</ul>
-
-</div>
-
-<div class="card">
-<h2>Education</h2>
-
-<p>
-<strong>Advanced Level Examination</strong><br>
-Accounts, Economics & Business Studies<br>
-Zahira College, Colombo, Sri Lanka<br>
-Completed: January 2010
-</p>
-
-<br>
-
-<p>
-<strong>Ordinary Level Examination</strong><br>
-Successfully Completed<br>
-Zahira College, Colombo, Sri Lanka
-</p>
-
-</div>
-
-<div class="card">
-<h2>Other Qualifications</h2>
-
-<ul>
-<li>Diploma in Computer Hardware Engineering with Networking</li>
-<li>Certificate in Information Technology</li>
-<li>Diploma in Computer Studies</li>
-<li>Advanced Certificate in Travel Operation</li>
-</ul>
-
-</div>
-
-<div class="card">
-<h2>Languages</h2>
-
-<ul>
-<li>English</li>
-<li>Tamil</li>
-<li>Hindi</li>
-</ul>
-
-</div>
-
-<div class="card">
-<h2>Personal Information</h2>
-
-<p><strong>Name:</strong> Mohamed Imran Ifthikar</p>
-<p><strong>Current Position:</strong> Operations Supervisor</p>
-<p><strong>Email:</strong> Imranmoh.sha@gmail.com</p>
-<p><strong>Mobile:</strong> +966 534116552</p>
-<p><strong>Location:</strong> Al Jubail, Saudi Arabia</p>
-<p><strong>Nationality:</strong> Sri Lankan</p>
-<p><strong>Driving Licence:</strong> Valid</p>
-
-</div>
-
-<div class="card">
-<h2>Contact</h2>
-
-<p>📧 Imranmoh.sha@gmail.com</p>
-<p>📱 +966 534116552</p>
-
-</div>
-
-<div class="card">
-<h2>Resume</h2>
-
-<a href="Mohamad-Imran-CV.pdf" class="cv-btn">
-Download CV
+<a href="mailto:mohimran.sha@gmail.com" class="btn secondary">
+Contact Me
 </a>
 
 </div>
 
 </div>
 
-<div class="footer">
-© 2026 Mohamed Imran Ifthikar | Operations Supervisor
+</section>
+
+<section class="section" id="about">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="glass about">
+
+<p>
+A dedicated operations professional with more than a decade of experience across transportation, logistics, fleet coordination, billing management, inventory control and customer service. Strong track record of managing resources efficiently, supporting project operations and maintaining long-term client relationships.
+</p>
+
+<div class="stats">
+
+<div class="stat">
+<h2>10+</h2>
+<p>Years Experience</p>
 </div>
 
-.hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:
-    linear-gradient(135deg,#0f172a,#1e3a8a);
-}
+<div class="stat">
+<h2>4</h2>
+<p>Organizations</p>
+</div>
 
-.hero-card{
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(20px);
-    padding:50px;
-    border-radius:30px;
-    text-align:center;
-    color:white;
-    max-width:700px;
-}
+<div class="stat">
+<h2>3</h2>
+<p>Countries</p>
+</div>
 
-.profile-pic{
-    width:180px;
-    height:180px;
-    border-radius:50%;
-    border:5px solid white;
-    object-fit:cover;
-    margin-bottom:20px;
-    box-shadow:0 0 30px rgba(59,130,246,.8);
-}
+<div class="stat">
+<h2>12+</h2>
+<p>Core Skills</p>
+</div>
 
-.btn-primary{
-    background:#3b82f6;
-    color:white;
-    padding:14px 30px;
-    border-radius:50px;
-    text-decoration:none;
-}
+</div>
 
-.btn-secondary{
-    background:white;
-    color:#0f172a;
-    padding:14px 30px;
-    border-radius:50px;
-    text-decoration:none;
-}
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">Professional Achievements</h2>
+
+<div class="achievements">
+
+<div class="achievement">
+<h3>Operations Leadership</h3>
+<p>
+Successfully managed transport operations, resource allocation and customer support activities for industrial projects.
+</p>
+</div>
+
+<div class="achievement">
+<h3>Logistics Expertise</h3>
+<p>
+Coordinated fleet utilization, equipment deployment and manpower planning to meet project requirements.
+</p>
+</div>
+
+<div class="achievement">
+<h3>Customer Relationship Management</h3>
+<p>
+Maintained strong customer relationships through timely service delivery, reporting and operational support.
+</p>
+</div>
+
+<div class="achievement">
+<h3>Billing & Reporting</h3>
+<p>
+Extensive experience in invoice management, utilization tracking, financial coordination and compliance reporting.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="experience">
+
+<h2 class="section-title">Career Journey</h2>
+
+<div class="timeline">
+
+<div class="timeline-item left">
+<div class="timeline-content">
+<h3>Operations Supervisor</h3>
+<span>May 2023 - Present</span>
+<p>Faris Al Arab Transport Co, Saudi Arabia</p>
+</div>
+</div>
+
+<div class="timeline-item right">
+<div class="timeline-content">
+<h3>Billing Coordinator</h3>
+<span>Sep 2019 - Feb 2023</span>
+<p>Jassim Transport & Stevedoring Co, Kuwait</p>
+</div>
+</div>
+
+<div class="timeline-item left">
+<div class="timeline-content">
+<h3>Administration Executive</h3>
+<span>May 2015 - Oct 2017</span>
+<p>Associated Motorways Pvt Ltd, Sri Lanka</p>
+</div>
+</div>
+
+<div class="timeline-item right">
+<div class="timeline-content">
+<h3>Inventory In Charge</h3>
+<span>Jan 2013 - Feb 2015</span>
+<p>Ansar Mall, UAE</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="skills">
+
+<h2 class="section-title">Professional Skills</h2>
+
+<div class="skills glass">
+
+<div class="skill">
+<div class="skill-name">
+<span>Operations Management</span>
+<span>95%</span>
+</div>
+<div class="bar"><div class="fill" style="width:95%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">
+<span>Logistics Management</span>
+<span>92%</span>
+</div>
+<div class="bar"><div class="fill" style="width:92%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">
+<span>Customer Relations</span>
+<span>90%</span>
+</div>
+<div class="bar"><div class="fill" style="width:90%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">
+<span>Fleet Coordination</span>
+<span>90%</span>
+</div>
+<div class="bar"><div class="fill" style="width:90%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">
+<span>Resource Planning</span>
+<span>88%</span>
+</div>
+<div class="bar"><div class="fill" style="width:88%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">
+<span>Inventory Control</span>
+<span>85%</span>
+</div>
+<div class="bar"><div class="fill" style="width:85%"></div></div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="education">
+
+<h2 class="section-title">Education & Certifications</h2>
+
+<div class="glass">
+
+<h3>Education</h3>
+
+<p>
+Advanced Level Examination in Accounts, Economics & Business Studies<br>
+Zahira College, Colombo, Sri Lanka
+</p>
+
+<br><br>
+
+<h3>Certifications</h3>
+
+<ul class="cert-list">
+
+<li>Diploma in Computer Hardware Engineering with Networking</li>
+
+<li>Certificate in Information Technology</li>
+
+<li>Diploma in Computer Studies</li>
+
+<li>Advance Certificate in Travel Operation</li>
+
+<li>Valid Driving License</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section" id="contact">
+
+<h2 class="section-title">Contact Information</h2>
+
+<div class="contact">
+
+<div class="contact-card">
+<h3>Location</h3>
+<p>Al Jubail, Saudi Arabia</p>
+</div>
+
+<div class="contact-card">
+<h3>Email</h3>
+<p>mohimran.sha@gmail.com</p>
+</div>
+
+<div class="contact-card">
+<h3>Phone</h3>
+<p>+966 53 411 6552</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Mohamad Imran | Operations Supervisor
+</footer>
+
+<a href="https://wa.me/966534116552" class="whatsapp" target="_blank">
+💬
+</a>
 
 </body>
 </html>
